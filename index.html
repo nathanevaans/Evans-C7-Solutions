@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Evans C7 Solutions</title>
+    <title>Math Notes</title>
 
     <!-- Dark theme + layout -->
     <style>
@@ -32,8 +32,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                    radial-gradient(circle at top, #1a202c 0, #05030a 55%);
+            background: radial-gradient(circle at top, #1a202c 0, #05030a 55%);
             color: var(--text);
             min-height: 100vh;
             padding: 2rem 1.25rem;
@@ -76,10 +75,9 @@
         .math-notes-card {
             border-radius: 1.25rem;
             padding: 1.4rem 1.6rem;
-            background:
-                    radial-gradient(circle at top left, var(--accent-soft), transparent 55%),
-                    radial-gradient(circle at bottom right, var(--accent-soft2), transparent 60%),
-                    var(--card);
+            background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%),
+            radial-gradient(circle at bottom right, var(--accent-soft2), transparent 60%),
+            var(--card);
             border: 1px solid var(--border);
             font-size: 0.9rem;
             line-height: 1.6;
@@ -128,7 +126,7 @@
 
         /* contents / TOC styles */
         .toc {
-            margin-top: 1.3rem;      /* NEW SPACING ABOVE CONTENTS */
+            margin-top: 1.3rem; /* NEW SPACING ABOVE CONTENTS */
             margin-bottom: 1.1rem;
             padding: 0.8rem 1rem;
             border-radius: 0.9rem;
@@ -170,6 +168,7 @@
             .math-notes-card {
                 padding: 1.1rem 1.1rem;
             }
+
             .title-row {
                 flex-direction: column;
                 align-items: flex-start;
@@ -184,7 +183,7 @@
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']]
             },
-            svg: { fontCache: 'global' }
+            svg: {fontCache: 'global'}
         };
     </script>
     <script
@@ -216,25 +215,31 @@
             <ol>
                 <li><a href="#q1">Question 1 – Neumann heat equation (uniqueness)</a></li>
                 <li><a href="#q2">Question 2 - Dirichlet heat equation (exponential decay)</a></li>
+                <li><a href="#q4">Question 4 - Galerkin's method for Poisson's equation</a></li>
+                <li><a href="#q6">Question 6 - An exercise in weak convergence with uniform bounds in a Hilbert
+                    space</a></li>
+
             </ol>
         </nav>
 
         <h3 id="q1">Question 1</h3>
         <p>
-            Prove there is at most one smooth solution of this initial/boundary value problem for the heat equation with Neumann
+            Prove there is at most one smooth solution of this initial/boundary value problem for the heat equation with
+            Neumann
             boundary conditions:
+            \begin{align*}
             \begin{cases}
-            \begin{align}
-            u_t - \Delta u = f, \quad&& \text{in } \, U_T \\
-            \frac{\partial u}{\partial \nu} = 0, \quad&& \text{on } \, \partial U \times [0, T] \\
-            u = g, \quad&& \text{on } \, U \times \{t = 0\}
-            \end{align}
+            u_t - \Delta u = f, \quad& \text{in } \, U_T \\
+            \frac{\partial u}{\partial \nu} = 0, \quad& \text{on } \, \partial U \times [0, T] \\
+            u = g, \quad& \text{on } \, U \times \{t = 0\}
             \end{cases}
+            \end{align*}
         </p>
 
         <h4>Answer</h4>
         <p>
-            Let $u^{(1)}$ and $u^{(2)}$ be smooth solutions to the Neumann problem and write $w = u^{(1)} - u^{(2)}$, we observe that
+            Let $u^{(1)}$ and $u^{(2)}$ be smooth solutions to the Neumann problem and write $w = u^{(1)} - u^{(2)}$, we
+            observe that
             \begin{equation*}
             w_t - \Delta w
             = u^{(1)}_t - u^{(2)}_t - \Delta u^{(1)} + \Delta u^{(2)}
@@ -249,7 +254,8 @@
             w = 0, \quad& \text{on } \, U \times \{t = 0\},
             \end{cases}
             \end{align*}
-            it suffices to prove $w\equiv0$, uniqueness follows as a direct consequence. As is typical with a problem like this we appeal to the so called energy identity
+            it suffices to prove $w\equiv0$, uniqueness follows as a direct consequence. As is typical with a problem
+            like this we appeal to the so called energy identity
             \begin{align*}
             \frac{d}{dt} \frac12 \int_U w^2 \, dx
             &= \int_U w w_t \, dx \\
@@ -266,19 +272,20 @@
             \[
             \frac12 \int_U w(x, 0)^2 \, dx = 0,
             \]
-            since the integrand is non-negative, this implies $w(\cdot,t)=0$ almost everywhere in $U$ for all $t\in[0,T]$. By continuity, $w\equiv 0$ in $U_T$.
+            since the integrand is non-negative, this implies $w(\cdot,t)=0$ almost everywhere in $U$ for all
+            $t\in[0,T]$. By continuity, $w\equiv 0$ in $U_T$.
         </p>
 
         <h3 id="q2">Question 2</h3>
         <p>
             Assume $u$ is a smooth solution of
+            \begin{align*}
             \begin{cases}
-            \begin{align}
-            u_t - \Delta u = 0, \quad&& \text{in } \, U_T \\
-            u = 0, \quad&& \text{on } \, \partial U \times [0, T] \\
-            u = g, \quad&& \text{on } \, U \times \{t = 0\}.
-            \end{align}
+            u_t - \Delta u = 0, \quad& \text{in } \, U_T \\
+            u = 0, \quad& \text{on } \, \partial U \times [0, T] \\
+            u = g, \quad& \text{on } \, U \times \{t = 0\}.
             \end{cases}
+            \end{align*}
             Prove the exponential decay estimate:
             \[
             \|u(\cdot, t)\|_{L^2(U)} \leq e^{-\lambda_1 t} \|g\|_{L^2(U)} \quad (t \geq 0),
@@ -287,7 +294,9 @@
         </p>
         <h4>Answer</h4>
         <p>
-            Let $\{\phi_n\}_{n\in \mathbb{N}}$ be the orthonormal basis we can construct from the Dirichlet Laplacian with eigenvalues satisfying $0 < \lambda_1 \leq \lambda_2 \leq \lambda_3 \leq \dots$. We write $g$ in terms of an expansion of this basis
+            Let $\{\phi_n\}_{n\in \mathbb{N}}$ be the orthonormal basis we can construct from the Dirichlet Laplacian
+            with eigenvalues satisfying $0 < \lambda_1 \leq \lambda_2 \leq \lambda_3 \leq \dots$. We write $g$ in terms
+            of an expansion of this basis
             \begin{equation*}
             g = \sum_{n \in \mathbb{N}} a_n \phi_n
             , \quad a_n = \int_U g \phi_n \, dx.
@@ -296,7 +305,8 @@
             \begin{equation*}
             u(x, t) = \sum_{n \in \mathbb{N}} a_n e^{-\lambda_n t} \phi_n(x),
             \end{equation*}
-            we apply Parceval's theorem and the result follows after some manipulation and applying Parceval's theorem again
+            we apply Parceval's theorem and the result follows after some manipulation and applying Parceval's theorem
+            again
             \begin{equation*}
             \|u(\cdot, t)\|^2_{L^2(U)} = \sum_{n \in \mathbb{N}}a_n^2 e^{-2\lambda_n t}.
             \end{equation*}
@@ -307,7 +317,7 @@
             Hence,
             \begin{align*}
             \|u(\cdot, t)\|^2_{L^2(U)}
-            &\leq  e^{-2\lambda_1 t}\sum_{n \in \mathbb{N}}a_n^2 \\
+            &\leq e^{-2\lambda_1 t}\sum_{n \in \mathbb{N}}a_n^2 \\
             &= e^{-2\lambda_1 t} \|g\|^2_{L^2(U)}.
             \end{align*}
             Taking square roots finishes the proof
@@ -316,6 +326,35 @@
             \leq e^{-\lambda_1 t} \|g\|_{L^2(U)}.
             \end{equation*}
         </p>
+        <h3 id="q4">Question 4</h3>
+        <p>
+            Suppose $f \in L^2(U)$ and assume that $u_m = \sum_{k = 1}^m d_m^k w_k$ solves
+            \begin{equation*}
+            \int_U \nabla u_m \cdot \nabla w_k \, dx = \int_U f w_k \, dx
+            \end{equation*}
+            for $k=1, \dots, m$. Show that a subsequence of $\{u_m\}_{m \in \mathbb{N}}$ converges weakly in $H^1_0(U)$
+            to the weak solution $u$ of
+            \begin{align*}
+                \begin{cases}
+                    -\Delta u = f, \quad& \text{in } U \\
+                    u = 0, \quad& \text{on } \partial U.
+                \end{cases}
+            \end{align*}
+        </p>
+        <h4>Answer</h4>
+        <h3 id="q6">Question 6</h3>
+        <p>
+            Suppose $H$ is a Hilbert space and $u_k \rightharpoonup u$ in $L^2(0, T, H)$. Assume further we have the uniform bounds
+            \begin{equation*}
+                \underset{t \in [0, T]}{\text{ess sup}}  \|u_k(t)\| \leq C
+                \quad (k=1,\dots)
+            \end{equation*}
+            for some constant $C$. Prove
+            \begin{equation*}
+                \underset{t \in [0, T]}{\text{ess sup}}  \|u(t)\| \leq C.
+            \end{equation*}
+        </p>
+        <h4>Answer</h4>
     </section>
 </div>
 </body>
