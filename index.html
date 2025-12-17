@@ -7,184 +7,184 @@
     <!-- Dark theme + layout -->
     <style>
         :root {
-          color-scheme: dark;
-          --bg: #05030a;
-          --panel: #0b1120;
-          --card: rgba(15, 23, 42, 0.98);
-          --accent: #4fd1c5;
-          --accent-soft: rgba(79, 209, 197, 0.06);
-          --accent-soft2: rgba(129, 140, 248, 0.06);
-          --text: #e5e7eb;
-          --muted: #9ca3af;
-          --border: rgba(148, 163, 184, 0.4);
+            color-scheme: dark;
+            --bg: #05030a;
+            --panel: #0b1120;
+            --card: rgba(15, 23, 42, 0.98);
+            --accent: #4fd1c5;
+            --accent-soft: rgba(79, 209, 197, 0.06);
+            --accent-soft2: rgba(129, 140, 248, 0.06);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: rgba(148, 163, 184, 0.4);
         }
 
         * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         /* smooth scroll to anchors */
         html {
-          scroll-behavior: smooth;
+            scroll-behavior: smooth;
         }
 
         body {
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          background:
-            radial-gradient(circle at top, #1a202c 0, #05030a 55%);
-          color: var(--text);
-          min-height: 100vh;
-          padding: 2rem 1.25rem;
-          display: flex;
-          justify-content: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                    radial-gradient(circle at top, #1a202c 0, #05030a 55%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem 1.25rem;
+            display: flex;
+            justify-content: center;
         }
 
         .page {
-          width: 100%;
-          max-width: 1100px;
+            width: 100%;
+            max-width: 1100px;
         }
 
         .title-row {
-          margin-bottom: 1.25rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.75rem;
         }
 
         h1 {
-          font-size: 1.5rem;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          color: var(--muted);
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--muted);
         }
 
         .badge {
-          padding: 0.25rem 0.7rem;
-          border-radius: 999px;
-          font-size: 0.75rem;
-          border: 1px solid rgba(79, 209, 197, 0.5);
-          background: linear-gradient(135deg, rgba(79, 209, 197, 0.15), rgba(56, 189, 248, 0.1));
-          color: var(--accent);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          white-space: nowrap;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(79, 209, 197, 0.5);
+            background: linear-gradient(135deg, rgba(79, 209, 197, 0.15), rgba(56, 189, 248, 0.1));
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
         }
 
         .math-notes-card {
-          border-radius: 1.25rem;
-          padding: 1.4rem 1.6rem;
-          background:
-            radial-gradient(circle at top left, var(--accent-soft), transparent 55%),
-            radial-gradient(circle at bottom right, var(--accent-soft2), transparent 60%),
-            var(--card);
-          border: 1px solid var(--border);
-          font-size: 0.9rem;
-          line-height: 1.6;
+            border-radius: 1.25rem;
+            padding: 1.4rem 1.6rem;
+            background:
+                    radial-gradient(circle at top left, var(--accent-soft), transparent 55%),
+                    radial-gradient(circle at bottom right, var(--accent-soft2), transparent 60%),
+                    var(--card);
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .math-notes-card h2 {
-          font-size: 1.05rem;
-          margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
         }
 
         .math-notes-card h3 {
-          font-size: 0.98rem;
-          margin: 1rem 0 0.35rem;
+            font-size: 0.98rem;
+            margin: 1rem 0 0.35rem;
         }
 
         .math-notes-card p,
         .math-notes-card ul,
         .math-notes-card ol {
-          color: var(--muted);
+            color: var(--muted);
         }
 
         .math-notes-card ul,
         .math-notes-card ol {
-          margin: 0.4rem 0 0.8rem 1.1rem;
-          padding-left: 0;
+            margin: 0.4rem 0 0.8rem 1.1rem;
+            padding-left: 0;
         }
 
         .math-notes-card li + li {
-          margin-top: 0.15rem;
+            margin-top: 0.15rem;
         }
 
         code {
-          font-family: "JetBrains Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          font-size: 0.8rem;
-          background: rgba(15, 23, 42, 0.9);
-          padding: 0.12rem 0.35rem;
-          border-radius: 0.35rem;
-          border: 1px solid rgba(148, 163, 184, 0.35);
+            font-family: "JetBrains Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.8rem;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 0.12rem 0.35rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(148, 163, 184, 0.35);
         }
 
         hr {
-          border: none;
-          border-top: 1px dashed rgba(148, 163, 184, 0.4);
-          margin: 1.3rem 0;
+            border: none;
+            border-top: 1px dashed rgba(148, 163, 184, 0.4);
+            margin: 1.3rem 0;
         }
 
         /* contents / TOC styles */
         .toc {
-          margin-top: 1.3rem;      /* NEW SPACING ABOVE CONTENTS */
-          margin-bottom: 1.1rem;
-          padding: 0.8rem 1rem;
-          border-radius: 0.9rem;
-          border: 1px solid rgba(148, 163, 184, 0.4);
-          background: radial-gradient(circle at top left,
-                     rgba(79, 209, 197, 0.08),
-                     transparent 60%);
-          font-size: 0.85rem;
+            margin-top: 1.3rem;      /* NEW SPACING ABOVE CONTENTS */
+            margin-bottom: 1.1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 0.9rem;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            background: radial-gradient(circle at top left,
+            rgba(79, 209, 197, 0.08),
+            transparent 60%);
+            font-size: 0.85rem;
         }
 
         .toc-title {
-          font-size: 0.86rem;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          color: var(--muted);
-          margin-bottom: 0.4rem;
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
         }
 
         .toc ol {
-          margin: 0;
-          padding-left: 1.1rem;
-          color: var(--muted);
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
         }
 
         .toc li {
-          margin: 0.15rem 0;
+            margin: 0.15rem 0;
         }
 
         .toc a {
-          color: var(--accent);
-          text-decoration: none;
+            color: var(--accent);
+            text-decoration: none;
         }
 
         .toc a:hover {
-          text-decoration: underline;
+            text-decoration: underline;
         }
 
         @media (max-width: 640px) {
-          .math-notes-card {
-            padding: 1.1rem 1.1rem;
-          }
-          .title-row {
-            flex-direction: column;
-            align-items: flex-start;
-          }
+            .math-notes-card {
+                padding: 1.1rem 1.1rem;
+            }
+            .title-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 
     <!-- MathJax (LaTeX rendering) -->
     <script>
         window.MathJax = {
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']]
-          },
-          svg: { fontCache: 'global' }
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
         };
     </script>
     <script
@@ -233,6 +233,41 @@
         </p>
 
         <h4>Answer</h4>
+        <p>
+            Let $u^{(1)}$ and $u^{(2)}$ be smooth solutions to the Neumann problem and write $w = u^{(1)} - u^{(2)}$, we observe that
+            \begin{equation*}
+            w_t - \Delta w
+            = u^{(1)}_t - u^{(2)}_t - \Delta u^{(1)} + \Delta u^{(2)}
+            = f -f
+            = 0.
+            \end{equation*}
+            So $w$ is a solution to the homogeneous Neumann problem
+            \begin{align*}
+            \begin{cases}
+            w_t - \Delta w = 0, \quad& \text{in } \, U_T \\
+            \frac{\partial w}{\partial \nu} = 0, \quad& \text{on } \, \partial U \times [0, T] \\
+            w = 0, \quad& \text{on } \, U \times \{t = 0\},
+            \end{cases}
+            \end{align*}
+            it suffices to prove $w\equiv0$, uniqueness follows as a direct consequence. As is typical with a problem like this we appeal to the so called energy identity
+            \begin{align*}
+            \frac{d}{dt} \frac12 \int_U w^2 \, dx
+            &= \int_U w w_t \, dx \\
+            &= \int_U w \Delta w \, dx \\
+            &= \int_{\partial U} w \frac{\partial w}{\partial \nu} \, dS - \int_U |\nabla w|^2 \, dx \\
+            &= - \int_U |\nabla w|^2 \, dx \\
+            &\leq 0.
+            \end{align*}
+            Since
+            \[
+            \frac{d}{dt} \frac12 \int_U w^2 \, dx \leq 0
+            \]
+            the integral as a function of $t$ is non-increasing. We compute the initial value
+            \[
+            \frac12 \int_U w(x, 0)^2 \, dx = 0,
+            \]
+            since the integrand is non-negative, this implies $w(\cdot,t)=0$ almost everywhere in $U$ for all $t\in[0,T]$. By continuity, $w\equiv 0$ in $U_T$.
+        </p>
 
         <h3 id="q2">Question 2</h3>
         <p>
@@ -246,7 +281,7 @@
             \end{cases}
             Prove the exponential decay estimate:
             \[
-                \|u(\cdot, t)\|_{L^2(U)} \leq e^{-\lambda_1 t} \|g\|_{L^2(U)} \quad (t \geq 0),
+            \|u(\cdot, t)\|_{L^2(U)} \leq e^{-\lambda_1 t} \|g\|_{L^2(U)} \quad (t \geq 0),
             \]
             where $\lambda_1 > 0$ is the pricipal eigenvalue of $-\Delta u$ (with zero boundary conditions) on $U$.
         </p>
