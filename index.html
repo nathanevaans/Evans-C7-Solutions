@@ -355,6 +355,22 @@
             \end{equation*}
         </p>
         <h4>Answer</h4>
+        <p>
+            Since $\{u_k\}_{k \in \mathbb{N}}$ is bounded in $L^\infty(0, T; H)$ we can apply Banach-Alaoglu and get a subsequence $\{u_{k_j}\}_{j \in \mathbb{N}}$ and some $\tilde u \in L^\infty(0, T; H)$ such that
+            \begin{equation*}
+            u_{k_j} \overset*\rightharpoonup \tilde u
+            \quad \text{in } L^\infty(0, T; H),
+            \end{equation*}
+            equivalently written
+            \begin{equation*}
+            \int_0^T ( u_{k_j}(t), \varphi(t))_H \, dt \longrightarrow \int_0^T (\tilde u(t), \varphi(t))_H \, dt
+            \quad \forall \varphi \in L^1(0, T; H).
+            \end{equation*}
+            Recall that $L^2(0, T; H) \subset L^1(0, T; H)$ with the embedding $\|\cdot\|_{L^1(0,T;H)} \leq\sqrt T \|\cdot\|_{L^2(0, T;H)}$. So every $L^2(0, T;H)$ function is an admissible test function for weak-* convergence which gives the definition of weak convergence in $L^2(0, T;H)$. Since $u_k \rightharpoonup u$ in $L^2(0, T;H)$ by uniqueness of weak limits $u = \tilde u$ and hence $u \in L^\infty(0, T;H)$ and by weak-* lower semi-continuity of the norm we have the result
+            \begin{equation*}
+            \underset{t \in[0, T]}{\text{ess sup}} \|u(t)\| \leq \liminf_{k \to \infty} \underset{t \in[0, T]}{\text{ess sup}}\|u_k(t)\| \leq C.
+            \end{equation*}
+        </p>
     </section>
 </div>
 </body>
