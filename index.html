@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Math Notes</title>
+    <title>Evans C7 Solutions</title>
 
     <!-- Dark theme + layout -->
     <style>
@@ -286,7 +286,36 @@
             where $\lambda_1 > 0$ is the pricipal eigenvalue of $-\Delta u$ (with zero boundary conditions) on $U$.
         </p>
         <h4>Answer</h4>
-        <!-- END NOTES -->
+        <p>
+            Let $\{\phi_n\}_{n\in \mathbb{N}}$ be the orthonormal basis we can construct from the Dirichlet Laplacian with eigenvalues satisfying $0 < \lambda_1 \leq \lambda_2 \leq \lambda_3 \leq \dots$. We write $g$ in terms of an expansion of this basis
+            \begin{equation*}
+            g = \sum_{n \in \mathbb{N}} a_n \phi_n
+            , \quad a_n = \int_U g \phi_n \, dx.
+            \end{equation*}
+            By separation of variables we have the solution
+            \begin{equation*}
+            u(x, t) = \sum_{n \in \mathbb{N}} a_n e^{-\lambda_n t} \phi_n(x),
+            \end{equation*}
+            we apply Parceval's theorem and the result follows after some manipulation and applying Parceval's theorem again
+            \begin{equation*}
+            \|u(\cdot, t)\|^2_{L^2(U)} = \sum_{n \in \mathbb{N}}a_n^2 e^{-2\lambda_n t}.
+            \end{equation*}
+            By the ordering of eigenvalues, $\lambda_1 \leq \lambda_n$ for all $n \in \mathbb{N}$ so
+            \begin{equation*}
+            e^{-2\lambda_n t} \leq e^{-2 \lambda_1 t}.
+            \end{equation*}
+            Hence,
+            \begin{align*}
+            \|u(\cdot, t)\|^2_{L^2(U)}
+            &\leq  e^{-2\lambda_1 t}\sum_{n \in \mathbb{N}}a_n^2 \\
+            &= e^{-2\lambda_1 t} \|g\|^2_{L^2(U)}.
+            \end{align*}
+            Taking square roots finishes the proof
+            \begin{equation*}
+            \|u(\cdot, t)\|_{L^2(U)}
+            \leq e^{-\lambda_1 t} \|g\|_{L^2(U)}.
+            \end{equation*}
+        </p>
     </section>
 </div>
 </body>
