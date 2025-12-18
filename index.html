@@ -335,28 +335,60 @@
             for $k=1, \dots, m$. Show that a subsequence of $\{u_m\}_{m \in \mathbb{N}}$ converges weakly in $H^1_0(U)$
             to the weak solution $u$ of
             \begin{align*}
-                \begin{cases}
-                    -\Delta u = f, \quad& \text{in } U \\
-                    u = 0, \quad& \text{on } \partial U.
-                \end{cases}
+            \begin{cases}
+            -\Delta u = f, \quad& \text{in } U \\
+            u = 0, \quad& \text{on } \partial U.
+            \end{cases}
             \end{align*}
         </p>
         <h4>Answer</h4>
+        <p>
+            Let $R: H^1_0(U) \to (H^1_0(U))^*$ be the Riesz map. Identifying the usual biliner form $B: H^1_0(U) \times
+            H^1_0(U) \to \mathbb{R}$, we have $B$ is continuous so $(u_m)_{m\in \mathbb{N}}$ is bounded in $H^1_0(U)$.
+            Writing $\tilde u_m = R(u_m)$ we have $(\tilde u_m)_{m \in \mathbb{N}}$ is bounded in $(H^1_0(U))^*$, we
+            apply Banach-Alaoglu to obtain a weak-* convergent subsequence, $(\tilde u_{m_n})_{n \in \mathbb{N}}$, to
+            some limit $\tilde u \in (H^1_0(U))^*$. Equivalently written
+            \begin{equation*}
+            (u_{m_n}, v)_{H^1_0(U)} \longrightarrow (u, v)_{H^1_0(U)}
+            , \quad \forall v \in H^1_0(U),
+            \end{equation*}
+            where $u = R^{-1}(\tilde u)$. This is the definition of weak convergence in $H^1_0(U)$, so $(u_{m_n})_{n\in
+            \mathbb{N}}$ converges weakly to $u$ in $H^1_0(U)$, this also implies weak convergence to $u$ in $L^2(U)$.
+            Since $H^1_0(U)$ is compactly embedded in $L^2(U)$ there exists a further subsequence $(u_{m_{n_k}})_{k \in
+            \mathbb{N}}$ that converges strongly to some $v \in L^2(U)$, as strong convergence implies weak convergence it is
+            the case that $v = u$. By continuity of $B$
+            \begin{equation*}
+                B[u_{m_{n_k}}, v] \longrightarrow B[u, v]
+            , \quad \text{in } L^2(U).
+            \end{equation*}
+            We also have
+            \begin{equation*}
+                B[u_{m_{n_k}}, v] = \int_U f v \, dx
+                , \quad \forall v \in \text{span}\{w_1, \dots, w_{m_{n_k}}\},
+            \end{equation*}
+            since this span is dense in $H^1_0(U)$, passing to the limit gives
+            \begin{equation*}
+                \int_U \nabla u \cdot \nabla v \, dx
+                = \int_U f v \, dx.
+            \end{equation*}
+        </p>
         <h3 id="q6">Question 6</h3>
         <p>
-            Suppose $H$ is a Hilbert space and $u_k \rightharpoonup u$ in $L^2(0, T, H)$. Assume further we have the uniform bounds
+            Suppose $H$ is a Hilbert space and $u_k \rightharpoonup u$ in $L^2(0, T, H)$. Assume further we have the
+            uniform bounds
             \begin{equation*}
-                \underset{t \in [0, T]}{\text{ess sup}}  \|u_k(t)\| \leq C
-                \quad (k=1,\dots)
+            \underset{t \in [0, T]}{\text{ess sup}} \|u_k(t)\| \leq C
+            \quad (k=1,\dots)
             \end{equation*}
             for some constant $C$. Prove
             \begin{equation*}
-                \underset{t \in [0, T]}{\text{ess sup}}  \|u(t)\| \leq C.
+            \underset{t \in [0, T]}{\text{ess sup}} \|u(t)\| \leq C.
             \end{equation*}
         </p>
         <h4>Answer</h4>
         <p>
-            Since $\{u_k\}_{k \in \mathbb{N}}$ is bounded in $L^\infty(0, T; H)$ we can apply Banach-Alaoglu and get a subsequence $\{u_{k_j}\}_{j \in \mathbb{N}}$ and some $\tilde u \in L^\infty(0, T; H)$ such that
+            Since $\{u_k\}_{k \in \mathbb{N}}$ is bounded in $L^\infty(0, T; H)$ we can apply Banach-Alaoglu and get a
+            subsequence $\{u_{k_j}\}_{j \in \mathbb{N}}$ and some $\tilde u \in L^\infty(0, T; H)$ such that
             \begin{equation*}
             u_{k_j} \overset*\rightharpoonup \tilde u
             \quad \text{in } L^\infty(0, T; H),
@@ -366,9 +398,14 @@
             \int_0^T ( u_{k_j}(t), \varphi(t))_H \, dt \longrightarrow \int_0^T (\tilde u(t), \varphi(t))_H \, dt
             \quad \forall \varphi \in L^1(0, T; H).
             \end{equation*}
-            Recall that $L^2(0, T; H) \subset L^1(0, T; H)$ with the embedding $\|\cdot\|_{L^1(0,T;H)} \leq\sqrt T \|\cdot\|_{L^2(0, T;H)}$. So every $L^2(0, T;H)$ function is an admissible test function for weak-* convergence which gives the definition of weak convergence in $L^2(0, T;H)$. Since $u_k \rightharpoonup u$ in $L^2(0, T;H)$ by uniqueness of weak limits $u = \tilde u$ and hence $u \in L^\infty(0, T;H)$ and by weak-* lower semi-continuity of the norm we have the result
+            Recall that $L^2(0, T; H) \subset L^1(0, T; H)$ with the embedding $\|\cdot\|_{L^1(0,T;H)} \leq\sqrt T
+            \|\cdot\|_{L^2(0, T;H)}$. So every $L^2(0, T;H)$ function is an admissible test function for weak-*
+            convergence which gives the definition of weak convergence in $L^2(0, T;H)$. Since $u_k \rightharpoonup u$
+            in $L^2(0, T;H)$ by uniqueness of weak limits $u = \tilde u$ and hence $u \in L^\infty(0, T;H)$ and by
+            weak-* lower semi-continuity of the norm we have the result
             \begin{equation*}
-            \underset{t \in[0, T]}{\text{ess sup}} \|u(t)\| \leq \liminf_{k \to \infty} \underset{t \in[0, T]}{\text{ess sup}}\|u_k(t)\| \leq C.
+            \underset{t \in[0, T]}{\text{ess sup}} \|u(t)\| \leq \liminf_{k \to \infty} \underset{t \in[0, T]}{\text{ess
+            sup}}\|u_k(t)\| \leq C.
             \end{equation*}
         </p>
     </section>
