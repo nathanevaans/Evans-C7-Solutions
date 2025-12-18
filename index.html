@@ -345,24 +345,24 @@
         <p>
             Let $R: H^1_0(U) \to (H^1_0(U))^*$ be the Riesz map. Identifying the usual biliner form $B: H^1_0(U) \times
             H^1_0(U) \to \mathbb{R}$. We claim that $(u_m)_{m \in \mathbb{N}}$ is bounded in $H^1_0(U)$. Recall that
-            $\|\cdot\|_{H^1_0(U)} \sim \|\nabla \cdot\|_{L^2(U)}$ and note $\|\nabla u\|^2_{L^2(U)} = B[u, u]$.
+            $\|\cdot\|_{H^1_0(U)} \sim \|\nabla \cdot\|_{L^2(U)}$ and note $\|\nabla u_m\|^2_{L^2(U)} = B[u_m, u_m]$.
             \begin{align*}
-            |(f, u)_{L^2(U)}|
-            &\leq \|f\|_{L^2(U)} \|u\|_{L^2(U)} \\
-            &\leq \|f\|_{L^2(U)} \|u\|_{H^1_0(U)} \\
-            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u\|_{L^2(U)},
+            |(f, u_m)_{L^2(U)}|
+            &\leq \|f\|_{L^2(U)} \|u_m\|_{L^2(U)} \\
+            &\leq \|f\|_{L^2(U)} \|u_m\|_{H^1_0(U)} \\
+            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u_m\|_{L^2(U)},
             \end{align*}
             where we have used Cauchy-Schwarz, the definition of $\|\cdot\|_{H^1_0(U)}$ and then equivalence of the norms. substituting
             this into the weak formulation of the problem gives
             \begin{align*}
-            \|\nabla u\|^2_{L^2(U)}
-            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u\|_{L^2(U)} \\
-            \|\nabla u\|_{L^2(U)}
+            \|\nabla u_m\|^2_{L^2(U)}
+            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u_m\|_{L^2(U)} \\
+            \|\nabla u_m\|_{L^2(U)}
             &\leq C_1 \|f\|_{L^2(U)}.
             \end{align*}
             Now we use the equivalence of the norms again to obtain
             \begin{equation*}
-            \|u\|_{H^1_0(U)} \leq C_2 \|f\|_{L^2(U)},
+            \|u_m\|_{H^1_0(U)} \leq C_2 \|f\|_{L^2(U)},
             \end{equation*}
             so $(u_m)_{m \in \mathbb{N}}$ is bounded in $H^1_0(U)$. Writing $\tilde u_m = R(u_m)$ we have $(\tilde
             u_m)_{m \in \mathbb{N}}$ is bounded in $(H^1_0(U))^*$, we
