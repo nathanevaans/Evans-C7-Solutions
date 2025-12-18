@@ -344,8 +344,28 @@
         <h4>Answer</h4>
         <p>
             Let $R: H^1_0(U) \to (H^1_0(U))^*$ be the Riesz map. Identifying the usual biliner form $B: H^1_0(U) \times
-            H^1_0(U) \to \mathbb{R}$, we have $B$ is continuous so $(u_m)_{m\in \mathbb{N}}$ is bounded in $H^1_0(U)$.
-            Writing $\tilde u_m = R(u_m)$ we have $(\tilde u_m)_{m \in \mathbb{N}}$ is bounded in $(H^1_0(U))^*$, we
+            H^1_0(U) \to \mathbb{R}$. We claim that $(u_m)_{m \in \mathbb{N}}$ is bounded in $H^1_0(U)$. Recall that
+            $\|\cdot\|_{H^1_0(U)} \sim \|\nabla \cdot\|_{L^2(U)}$ and note $\|\nabla u\|^2_{L^2(U)} = B[u, u]$.
+            \begin{align*}
+            |(f, u)_{L^2(U)}|
+            &\leq \|f\|_{L^2(U)} \|u\|_{L^2(U)} \\
+            &\leq \|f\|_{L^2(U)} \|u\|_{H^1_0(U)} \\
+            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u\|_{L^2(U)},
+            \end{align*}
+            where we have used Cauchy-Schwarz, the definition of $\|\cdot\|_{H^1_0(U)}$ and then equivalence of the norms. substituting
+            this into the weak formulation of the problem gives
+            \begin{align*}
+            \|\nabla u\|^2_{L^2(U)}
+            &\leq C_1 \|f\|_{L^2(U)} \|\nabla u\|_{L^2(U)} \\
+            \|\nabla u\|_{L^2(U)}
+            &\leq C_1 \|f\|_{L^2(U)}.
+            \end{align*}
+            Now we use the equivalence of the norms again to obtain
+            \begin{equation*}
+            \|u\|_{H^1_0(U)} \leq C_2 \|f\|_{L^2(U)},
+            \end{equation*}
+            so $(u_m)_{m \in \mathbb{N}}$ is bounded in $H^1_0(U)$. Writing $\tilde u_m = R(u_m)$ we have $(\tilde
+            u_m)_{m \in \mathbb{N}}$ is bounded in $(H^1_0(U))^*$, we
             apply Banach-Alaoglu to obtain a weak-* convergent subsequence, $(\tilde u_{m_n})_{n \in \mathbb{N}}$, to
             some limit $\tilde u \in (H^1_0(U))^*$. Equivalently written
             \begin{equation*}
@@ -355,21 +375,22 @@
             where $u = R^{-1}(\tilde u)$. This is the definition of weak convergence in $H^1_0(U)$, so $(u_{m_n})_{n\in
             \mathbb{N}}$ converges weakly to $u$ in $H^1_0(U)$, this also implies weak convergence to $u$ in $L^2(U)$.
             Since $H^1_0(U)$ is compactly embedded in $L^2(U)$ there exists a further subsequence $(u_{m_{n_k}})_{k \in
-            \mathbb{N}}$ that converges strongly to some $v \in L^2(U)$, as strong convergence implies weak convergence it is
+            \mathbb{N}}$ that converges strongly to some $v \in L^2(U)$, as strong convergence implies weak convergence
+            it is
             the case that $v = u$. By continuity of $B$
             \begin{equation*}
-                B[u_{m_{n_k}}, v] \longrightarrow B[u, v]
+            B[u_{m_{n_k}}, v] \longrightarrow B[u, v]
             , \quad \text{in } L^2(U).
             \end{equation*}
             We also have
             \begin{equation*}
-                B[u_{m_{n_k}}, v] = \int_U f v \, dx
-                , \quad \forall v \in \text{span}\{w_1, \dots, w_{m_{n_k}}\},
+            B[u_{m_{n_k}}, v] = \int_U f v \, dx
+            , \quad \forall v \in \text{span}\{w_1, \dots, w_{m_{n_k}}\},
             \end{equation*}
             since this span is dense in $H^1_0(U)$, passing to the limit gives
             \begin{equation*}
-                \int_U \nabla u \cdot \nabla v \, dx
-                = \int_U f v \, dx.
+            \int_U \nabla u \cdot \nabla v \, dx
+            = \int_U f v \, dx.
             \end{equation*}
         </p>
         <h3 id="q6">Question 6</h3>
